@@ -3,7 +3,7 @@ import React from "react"
 export default function Introduction() {
     return (
         <div className="intro">
-            <h1>Quizz</h1>
+            <h1>Quizzical</h1>
             <div className="description">
                 <p>
                     Quizzical is a fun and engaging quiz application that offers a wide range of quizzes on various topics 
