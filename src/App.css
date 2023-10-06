@@ -26,6 +26,12 @@ body {
   height: 100vh;
 }
 
+@media  screen and (min-width: 700px) {
+  #root {
+    align-items: center;
+  }
+}
+
 .description {
   max-width: 500px;
 }
