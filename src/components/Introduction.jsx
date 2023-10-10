@@ -1,6 +1,8 @@
 import React from "react"
 
-export default function Introduction() {
+export default function Introduction(props) {
+    const { handleClick } = props
+
     return (
         <div className="intro">
             <h1>Quizzical</h1>
@@ -11,7 +13,7 @@ export default function Introduction() {
                     challenge yourself and have some fun, Quizzical has something for everyone.
                 </p>
             </div>
-            <button>Start Quiz</button>
+            <button onClick={handleClick}>Start Quiz</button>
         </div>
     )
 }
