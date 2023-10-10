@@ -12,11 +12,12 @@ function App() {
 
   return (
     <>
-      <Introduction 
-        handleClick={() => changeQuestion()}
-      />
-
-      {questions && <Questions questionState={questions}/>}
+      {
+        questions ? <Questions questionState={questions}/> : 
+        <Introduction 
+          handleClick={() => changeQuestion()}
+        />
+      }
     </>
   )
 }
