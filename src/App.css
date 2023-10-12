@@ -12,10 +12,8 @@ body {
   background-color: #F5F7FB;
   font-family: 'Karla', sans-serif;
   text-align: center;
-  overflow-y: hidden;
-  height: 100vh;
+  max-height: 100%;
 }
-
 
 #root {
   max-width: 1280px;
@@ -24,14 +22,6 @@ body {
   display: flex;
   justify-content: center;
   font-size: 0.95rem;
-  height: 100vh;
-
-}
-
-@media  screen and (min-width: 700px) {
-  #root {
-    align-items: center;
-  }
 }
 
 .description {
@@ -54,7 +44,7 @@ body::before {
   content: url('./assets/blobs-topRight.png');
   position: fixed;
   right: -3rem;
-  top: -1rem;
+  top: -3rem;
   z-index: 1;
   margin: 0;
   padding: 0;
@@ -64,10 +54,26 @@ body::after{
   content: url('./assets/blobs-bottomLeft.png');
   position: fixed;
   left: -3rem;
-  bottom: -2rem;
+  bottom: -4rem;
   z-index: 1;
   margin: 0;
   padding: 0;
+}
+
+@media  screen and (min-width: 700px) {
+  #root {
+    align-items: center;
+  }
+
+  body::before {
+    right: -3rem;
+    top: -1rem;
+  }
+
+  body::after {
+    left: -3rem;
+    bottom: -2rem;
+  }
 }
 
 .intro h1 {
@@ -94,4 +100,82 @@ body::after{
 
 .intro button:focus {
   outline: none;
+}
+
+.eachQuestion {
+  border-bottom: 1px solid #DBDEF0;
+  width: 100%;
+  padding-bottom: 0.9rem;
+}
+
+.eachQuestion h3 {
+  font-size: 1rem;
+  text-align: left;
+  margin-bottom: 1rem;
+  color: #293264;
+}
+
+.eachQuestion div {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.eachQuestion button {
+  font-size: 0.75rem;
+  color: #293264;
+  /* background-color: #D6DBF5; */
+  border-radius: 10px;
+  border: 1px solid #293264;
+  outline: none;
+  background-color: #F5F7FB;
+}
+
+.eachQuestion button:focus,  
+.eachQuestion button:active{
+  outline: none;
+}
+
+.questionSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1.5rem 0;
+  margin-bottom: 0.5rem;
+}
+
+.checkAnswers {
+  background-color: #4D5B9E;
+  color: #F5F7FB;
+  padding: 0.8rem 4rem;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  margin-bottom: 2.5rem;
+  transition: all 0.3s ease-out;
+  user-select: none;
+}
+
+.checkAnswers:active {
+  border: none;
+  transform: scale(0.98);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+} 
+
+.checkAnswers:focus {
+  outline: none;
+}
+
+@media  screen and (min-width: 700px) {
+  .eachQuestion h3 {
+    font-size: 1.2rem;
+  }
+
+  .questionSection {
+    max-width: 90vw; 
+  }
+
+  .eachQuestion button {
+    font-size: 0.9rem;
+  }
 }
