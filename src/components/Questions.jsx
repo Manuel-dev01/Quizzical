@@ -67,6 +67,8 @@ export default function Questions(props) {
         )
     })
 
+    // 
+
     console.log(question)
   
     return (
